@@ -1,0 +1,14 @@
+name: Mi primer workflow
+on:
+  push:
+    branches: [ main ]
+jobs :
+  Mi-primer-job:
+    name: Mi primer jon
+    runs-on: ubuntu-latest
+    steps:
+    - name: Imprimir
+      env:
+        MI_VARIABLE: Hola mundo
+      run: |
+        echo $MI_VARIABLE 
