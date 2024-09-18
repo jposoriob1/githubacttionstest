@@ -6,9 +6,12 @@ jobs :
   Mi-primer-job:
     name: Mi primer jon
     runs-on: ubuntu-latest
+    outputs:
+      salida: ${{ steps.imprimir.outputs.respuesta }}
     steps:
     - name: Imprimir
       env:
         MI_VARIABLE: Hola mundo
-      run: |
-        echo $MI_VARIABLE 
+      run: 
+        echo "::set-output name= respuesta::$MI_VARIABLE" 
+
