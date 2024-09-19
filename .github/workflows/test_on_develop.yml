@@ -31,6 +31,8 @@ jobs:
       uses: tukasz/direct-merge-action@master
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        owner: tukasz
+        repo: direct-merge-action
         source-branch: ${{ github.ref_name }}
         target-branch: develop
 
