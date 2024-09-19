@@ -27,6 +27,13 @@ jobs:
       run: |
           coverage run -m unittest tests/test_persona.py
           coverage report -m
+    - name: Mezcla feature** -> develop
+      uses: tukasz/direct-merge-action@master
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        source-branch: feature**
+        target-branch: develop
+
         
 
 
