@@ -1,10 +1,12 @@
 name: Test en develop
 on:
   push:
-    branches: [ develop ]
+    branches:
+        - 'feature**'
 jobs:
   test:
-    name: Test unitarios 
+    name: Test unitarios
+    if: ${{ contains(github.event.head_commit.message, 'Verde') }}
     runs-on: ubuntu-latest
     steps:
     - name: checkoutrepositorio
